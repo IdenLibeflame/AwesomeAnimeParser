@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['isAnimeGod']], function () {
+    Route::get('admin/index', function () {
+        return view('admin.index');
+    })->name('admin');
+});

@@ -15,6 +15,11 @@
                     @endif
 
                     You are logged in!
+                        <br>
+                        <hr>
+                        @if(auth()->user()->isAnimeGod)
+                            <a href="{{ route('admin') }}" class="btn btn-danger">Panel of Power</a>
+                        @endif
                 </div>
             </div>
         </div>
