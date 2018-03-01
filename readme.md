@@ -11,7 +11,7 @@
 <h3>Установка</h3>
 <ol>
   <li>Установить LAMP или его аналог</li>
-  <li>Ввести в терминал git clone https://github.com/IdenLibeflame/AwesomeAnimeParser.git</li>
+  <li>Ввести в терминал <b>git clone https://github.com/IdenLibeflame/AwesomeAnimeParser.git</b></li>
   <li>Скачать и установить composer по ссылке выше.</li>
   <li>Задать проекту нужные права.</li>
   <li>Зайти в папку со скачанным проектом и переименовать .env.example в .env</li>
