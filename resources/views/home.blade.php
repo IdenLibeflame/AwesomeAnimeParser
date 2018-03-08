@@ -14,15 +14,28 @@
                         </div>
                     @endif
 
-                    You are logged in!
                         <br>
                         <hr>
                         @if(auth()->user()->isAnimeGod)
-                            <a href="{{ route('admin') }}" class="btn btn-danger">Panel of Power</a>
+                            <a href="{{ route('admin') }}" class="ui primary button">Panel of Power</a>
                         @endif
                 </div>
             </div>
         </div>
     </div>
+    <div align="center">
+        <h1 align="center">Don't waste time - watch anime!</h1>
+    </div>
+
+        <time class="clock">
+            <span class="clock__hand clock__hand--hour"></span>:
+            <span class="clock__hand clock__hand--minute"></span>:
+            <span class="clock__hand clock__hand--second"></span>
+
+            <svg class="clock__face" aria-hidden="true" role="presentation">
+                <circle class="clock__face-stroke"></circle>
+            </svg>
+        </time>
 </div>
+
 @endsection

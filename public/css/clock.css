@@ -1,0 +1,93 @@
+.clock {
+    --clock-diameter: 250px;
+    --clock-border-width: 5px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: var(--clock-diameter);
+    height: var(--clock-diameter);
+    margin: auto;
+
+    border: var(--clock-border-width) solid #000000;
+    border-radius: 50%;
+
+    font-size: 0;
+}
+
+.clock__hand {
+    --hand-width: 1px;
+    --hand-height: 50%;
+
+    position: absolute;
+    top: calc(50% - var(--hand-height));
+    left: calc(50% - calc(var(--hand-width) / 2));
+
+    width: var(--hand-width);
+    height: var(--hand-height);
+
+    background-color: var(--hand-color, #000000);
+    border-radius: 2px;
+    transform: rotate(var(--turn, 0turn));
+    transform-origin: 50% 100%;
+}
+
+.clock__hand--hour {
+    --hand-width: 6px;
+    --hand-height: 30%;
+
+    --hours-in-day-half: 12;
+    --hours-turn: calc(1turn * var(--hours) / var(--hours-in-day-half));
+
+    --min-in-hour: 60;
+    --minutes-turn: calc((1 / var(--hours-in-day-half)) * 1turn * var(--minutes) / var(--min-in-hour));
+
+    --turn: calc(var(--hours-turn) + var(--minutes-turn));
+}
+
+.clock__hand--minute {
+    --hand-width: 4px;
+    --hand-height: 40%;
+
+    --minutes-in-hour: 60;
+    --turn: calc(1turn * var(--minutes) / var(--minutes-in-hour));
+}
+
+.clock__hand--second {
+    --hand-width: 2px;
+    --hand-height: 45%;
+    --hand-color: red;
+
+    --seconds-in-minute: 60;
+    --turn: calc(1turn * var(--seconds) / var(--seconds-in-minute));
+}
+
+.clock__face {
+    --face-padding: 10px;
+
+    position: absolute;
+    top: calc(var(--face-padding) * -1);
+    left: calc(var(--face-padding) * -1);
+
+    width: var(--clock-diameter);
+    height: var(--clock-diameter);
+    padding: var(--face-padding);
+}
+
+.clock__face-stroke {
+    --pi: 3.14159;
+    --radius: calc(var(--clock-diameter) / 2);
+    --mark: 1;
+    --gap: calc(calc(var(--pi) * var(--radius) / 6) - var(--mark));
+
+    fill: none;
+    stroke: #000000;
+    stroke-width: 10px;
+    cx: var(--radius);
+    cy: var(--radius);
+    r: var(--radius);
+    stroke-dasharray: var(--mark) var(--gap);
+}
