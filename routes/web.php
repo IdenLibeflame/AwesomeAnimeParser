@@ -20,9 +20,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['isAnimeGod']], function () {
-    Route::get('admin/index', 'AnimeController@index')->name('admin');
+//    Route::get('admin/index', 'AnimeController@index')->name('admin');
+//
+//    Route::get('admin/add', 'AdminAnimeController@add')->name('add');
 
-    Route::get('admin/animeForm', 'AnimeController@showAnimeForm')->name('showAnimeForm');
+//    Route::post('admin/addAnime', 'AnimeController@add')->name('addAnime');
 
-    Route::post('admin/addAnime', 'AnimeController@addAnime')->name('addAnime');
+    Route::resource('admin', 'AdminAnimeController');
+
+
 });

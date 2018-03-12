@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="{{ route('showAnimeForm') }}" class="massive ui button">Add new anime!</a>
+<a href="{{ route('admin.create') }}" class="massive ui button">Add new anime!</a>
 
 @forelse($animes as $anime)
     <div class="thumbnail">

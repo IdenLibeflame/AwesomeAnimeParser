@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{ route('addAnime') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <p>Title: <input type="text" name="title" required></p>
         <br>

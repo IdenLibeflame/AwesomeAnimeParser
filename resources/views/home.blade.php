@@ -17,7 +17,7 @@
                         <br>
                         <hr>
                         @if(auth()->user()->isAnimeGod)
-                            <a href="{{ route('admin') }}" class="ui primary button">Panel of Power</a>
+                            <a href="{{ route('admin.index') }}" class="ui primary button">Panel of Power</a>
                         @endif
                 </div>
             </div>
