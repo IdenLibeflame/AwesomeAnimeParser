@@ -9,7 +9,6 @@ class Anime extends Model
 {
     public static function addAnime()
     {
-//        $pathToAttach = '/public/src/animeImage/';
         $pathToAttach = '/src/animeImage/';
         $file = request()->file('image');
 

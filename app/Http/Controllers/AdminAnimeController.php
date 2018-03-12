@@ -60,7 +60,7 @@ class AdminAnimeController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -72,7 +72,7 @@ class AdminAnimeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -83,6 +83,9 @@ class AdminAnimeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $removingAnime = Anime::find($id);
+        $removingAnime->delete();
+
+        return redirect()->to('admin');
     }
 }
