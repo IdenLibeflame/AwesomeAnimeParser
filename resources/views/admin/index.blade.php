@@ -13,6 +13,7 @@
             <p>Episode: {{ $anime->episodes }}</p>
         </div>
     </div>
+    <a href="{{ route('admin.show', ['id' => $anime->id]) }}">Show</a>
 @empty
 @endforelse
 <div align="center">{!! $animes->render() !!}</div>

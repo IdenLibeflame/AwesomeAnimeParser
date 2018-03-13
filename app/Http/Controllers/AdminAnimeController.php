@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Anime;
-use Illuminate\Http\Request;
 
 class AdminAnimeController extends Controller
 {
@@ -49,7 +48,13 @@ class AdminAnimeController extends Controller
      */
     public function show($id)
     {
+        $animeData = Anime::find($id);
 
+        $animeImg = $animeData->image;
+        $animeImg = explode('/', $animeImg);
+        $animeImg = $animeImg[3];
+
+        return view('admin.showAnime', compact('animeData', 'animeImg'));
     }
 
     /**
@@ -70,9 +75,11 @@ class AdminAnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        Anime::updateAnime($id);
+
+        return redirect()->to('admin');
     }
 
     /**
